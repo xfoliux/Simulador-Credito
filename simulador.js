@@ -29,3 +29,5 @@ function calcular() {
         mostrarEnSpan("spnEstadoCredito", "CREDITO RECHAZADO");
     }
 }
+
+
