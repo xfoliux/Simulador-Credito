@@ -52,12 +52,20 @@ function analizarCredito(capacidadPago, cuotaMensual) {
 }
 function reiniciar() {
 
+    // LIMPIAR INPUTS
     document.getElementById("txtIngresos").value = "";
     document.getElementById("txtEgresos").value = "";
     document.getElementById("txtMonto").value = "";
     document.getElementById("txtPlazo").value = "";
     document.getElementById("txtTasaInteres").value = "";
 
-    limpiarResultados();
-    limpiarErrores();
+    // LIMPIAR RESULTADOS
+    document.getElementById("spnDisponible").textContent = "";
+    document.getElementById("spnCapacidadPago").textContent = "";
+    document.getElementById("spnInteresPagar").textContent = "";
+    document.getElementById("spnTotalPrestamo").textContent = "";
+    document.getElementById("spnCuotaMensual").textContent = "";
+
+    // ESTADO POR DEFECTO
+    document.getElementById("spnEstadoCredito").textContent = "ANALIZANDO...";
 }
