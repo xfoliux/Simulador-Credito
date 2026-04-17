@@ -23,7 +23,7 @@ function calcularCapacidadPago(montoDisponible) {
 }
 
 function calcularInteresSimple(monto, tasa, plazoAnios) {
-    let interes = monto * (tasa / 100) * plazoAnios;
+    let interes = plazoAnios * monto *(tasa / 100);
     return interes;
 }
 
@@ -41,8 +41,12 @@ function calcularCuotaMensual(total, plazoAnios) {
 
 function aprobarCredito(capacidadPago, cuotaMensual) {
     if (capacidadPago >= cuotaMensual) {
-        return "CREDITO APROBADO";
+        return true;
     } else {
-        return "CREDITO RECHAZADO";
+        return false;
     }
+}
+
+function analizarCredito(capacidadPago, cuotaMensual) {
+    return aprobarCredito(capacidadPago, cuotaMensual);
 }
