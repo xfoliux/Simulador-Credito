@@ -1,70 +1,144 @@
+/* =========================
+   BASE
+========================= */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f6f8;
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    background: #f4f7f5;
     margin: 0;
     padding: 0;
 }
 
+/* =========================
+   CONTENEDOR CENTRADO REAL
+========================= */
 .container {
-    width: 400px;
+    max-width: 1100px;
     margin: 40px auto;
     padding: 20px;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
-h1 {
+/* =========================
+   HEADER BANCO
+========================= */
+.header {
     text-align: center;
-    margin-bottom: 20px;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    margin-bottom: 25px;
 }
 
-h2 {
-    margin-top: 20px;
-    font-size: 18px;
+.logo img {
+    width: 160px;
+    padding: 8px 15px;
+    background: white;
+    border-radius: 10px;
 }
 
-label {
-    display: block;
+/* =========================
+   TITULO
+========================= */
+h1 {
     margin-top: 10px;
-    font-weight: bold;
+    color: #0B6B3A;
+    font-weight: 700;
 }
 
+/* =========================
+   GRID CENTRADO PERFECTO
+========================= */
+.grid {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 25px;
+}
+
+/* =========================
+   TARJETAS
+========================= */
+.columna {
+    flex: 1;
+    background: #ffffff;
+    padding: 28px;
+    border-radius: 14px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    border-top: 4px solid #0B6B3A;
+}
+
+/* =========================
+   SUBTITULOS
+========================= */
+h2 {
+    color: #0B6B3A;
+    font-size: 16px;
+}
+
+/* =========================
+   INPUTS MODERNOS
+========================= */
 input {
     width: 100%;
-    padding: 8px;
-    margin-top: 5px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
+    padding: 12px;
+    margin-top: 6px;
+    border-radius: 8px;
+    border: 1px solid #d6ddd9;
+    background: #fafcfa;
+    font-size: 14px;
 }
 
+input:focus {
+    border-color: #1DB954;
+    box-shadow: 0 0 0 3px rgba(29,185,84,0.15);
+    outline: none;
+}
+
+/* =========================
+   TEXTOS
+========================= */
 p {
-    margin-top: 10px;
+    margin-top: 12px;
+    font-size: 14px;
 }
 
 span {
-    font-weight: bold;
-    color: #2c3e50;
+    font-weight: 700;
+    color: #0B6B3A;
 }
 
+/* =========================
+   BOTONES BANCO
+========================= */
 .buttons {
     margin-top: 20px;
-    display: flex;
-    justify-content: space-between;
+    text-align: center;
 }
 
 button {
-    width: 48%;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    background-color: #3498db;
+    background: #0B6B3A;
     color: white;
-    font-weight: bold;
+    border: none;
+    padding: 12px 22px;
+    border-radius: 10px;
+    font-weight: 600;
     cursor: pointer;
+    transition: 0.3s;
+    margin: 5px;
 }
 
 button:hover {
-    background-color: #2980b9;
+    background: #07522c;
+    transform: translateY(-1px);
+}
+
+/* REINICIAR */
+#btnReiniciar {
+    background: #e9f5ee;
+    color: #0B6B3A;
+    border: 1px solid #0B6B3A;
+}
+
+#btnReiniciar:hover {
+    background: #d9efe2;
 }

@@ -1,0 +1,6 @@
+soy principiante y quiero unos estilos como el del banco produbanco.
+Separa los datos financieros en la parte izquierda y solicitud de credito en la parte derecha.
+no realices cambios en los ID DIVS conserva el codigo que te estoy adjuntando.
+
+Centra imagen produbanco_logo.png centra imagen y dame un estilo con colores verde y blanco estilo como el del bancoprodubanco adjunto la url https://www.produbanco.com/Produnet/
+conserva los codigos establecidos que no afecten los cambios.

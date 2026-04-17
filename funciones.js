@@ -50,3 +50,14 @@ function aprobarCredito(capacidadPago, cuotaMensual) {
 function analizarCredito(capacidadPago, cuotaMensual) {
     return aprobarCredito(capacidadPago, cuotaMensual);
 }
+function reiniciar() {
+
+    document.getElementById("txtIngresos").value = "";
+    document.getElementById("txtEgresos").value = "";
+    document.getElementById("txtMonto").value = "";
+    document.getElementById("txtPlazo").value = "";
+    document.getElementById("txtTasaInteres").value = "";
+
+    limpiarResultados();
+    limpiarErrores();
+}
