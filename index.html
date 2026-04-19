@@ -27,32 +27,35 @@
         <!-- GRID PRINCIPAL -->
         <div class="grid">
 
-            <!-- IZQUIERDA -->
             <div class="columna">
                 <h2>Datos financieros</h2>
 
                 <label>Ingresos:</label>
-                <input type="number" id="txtIngresos">
+                <input type="number" id="txtIngresos" onblur="validarIngresos()">
+                <small id="errorIngresos" class="error"></small>
 
                 <label>Egresos:</label>
-                <input type="number" id="txtEgresos">
+                <input type="numbe" id="txtEgresos" onblur="validarEgresos()">
+                <small id="errorEgresos" class="error"></small>
 
                 <p>Disponible: <span id="spnDisponible"></span></p>
                 <p>Capacidad de pago mensual: <span id="spnCapacidadPago"></span></p>
             </div>
 
-            <!-- DERECHA -->
             <div class="columna">
                 <h2>Solicitud de crédito</h2>
 
                 <label>Monto:</label>
-                <input type="number" id="txtMonto">
+                <input type="text" id="txtMonto" onblur="validarMonto()">
+                <small id="errorMonto" class="error"></small>
 
                 <label>Plazo en años:</label>
-                <input type="number" id="txtPlazo">
+                <input type="text" id="txtPlazo" onblur="validarPlazo()">
+                <small id="errorPlazo" class="error"></small>
 
                 <label>Tasa de interés:</label>
-                <input type="number" id="txtTasaInteres">
+                <input type="text" id="txtTasaInteres" onblur="validarTasaInteres()">
+                <small id="errorTasaInteres" class="error"></small>
 
                 <p>Interés a pagar: <span id="spnInteresPagar"></span></p>
                 <p>Total préstamo: <span id="spnTotalPrestamo"></span></p>

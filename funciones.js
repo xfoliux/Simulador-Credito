@@ -1,10 +1,11 @@
-//AQUI TODA LA LOGICA DE LAS FUNCIONES DEL NEGOCIO
+// AQUI TODA LA LOGICA DE LAS FUNCIONES DEL NEGOCIO
+
 function calcularDisponible(ingresos, egresos) {
-    let disponible = ingresos - egresos;//-500
-    if (disponible < 0) {// -500<0 true
-        disponible = 0;//0
+    let disponible = ingresos - egresos;
+    if (disponible < 0) {
+        disponible = 0;
     }
-    return disponible; //500
+    return disponible;
 }
 
 function mostrarEnSpan(idSpan, valor) {
@@ -18,38 +19,32 @@ function mostrarEnTxt(idTxt) {
 }
 
 function calcularCapacidadPago(montoDisponible) {
-    let capacidadPago = montoDisponible / 2;
-    return capacidadPago;
+    return montoDisponible / 2;
 }
 
 function calcularInteresSimple(monto, tasa, plazoAnios) {
-    let interes = plazoAnios * monto *(tasa / 100);
-    return interes;
+    return plazoAnios * monto * (tasa / 100);
 }
 
 function calcularTotalPagar(monto, interes) {
     const SOLCA = 100;
-    let totalPagar = parseFloat(monto) + parseFloat(interes) + SOLCA;
-    return totalPagar;
+    return parseFloat(monto) + parseFloat(interes) + SOLCA;
 }
 
 function calcularCuotaMensual(total, plazoAnios) {
     let plazoMeses = plazoAnios * 12;
-    let cuotaMensual = total / plazoMeses;
-    return cuotaMensual;
+    if (plazoMeses === 0) return 0; // evitar división por 0
+    return total / plazoMeses;
 }
 
 function aprobarCredito(capacidadPago, cuotaMensual) {
-    if (capacidadPago >= cuotaMensual) {
-        return true;
-    } else {
-        return false;
-    }
+    return capacidadPago >= cuotaMensual;
 }
 
 function analizarCredito(capacidadPago, cuotaMensual) {
     return aprobarCredito(capacidadPago, cuotaMensual);
 }
+
 function reiniciar() {
 
     // LIMPIAR INPUTS
@@ -58,6 +53,13 @@ function reiniciar() {
     document.getElementById("txtMonto").value = "";
     document.getElementById("txtPlazo").value = "";
     document.getElementById("txtTasaInteres").value = "";
+
+    // LIMPIAR ERRORES
+    document.getElementById("errorIngresos").textContent = "";
+    document.getElementById("errorEgresos").textContent = "";
+    document.getElementById("errorMonto").textContent = "";
+    document.getElementById("errorPlazo").textContent = "";
+    document.getElementById("errorTasaInteres").textContent = "";
 
     // LIMPIAR RESULTADOS
     document.getElementById("spnDisponible").textContent = "";
@@ -68,4 +70,57 @@ function reiniciar() {
 
     // ESTADO POR DEFECTO
     document.getElementById("spnEstadoCredito").textContent = "ANALIZANDO...";
+}
+
+/* =========================
+   VALIDACIONES
+========================= */
+
+function esNumero(valor) {
+    return /^\d+$/.test(valor);
+}
+
+function validarCampo(idInput, idError) {
+    let input = document.getElementById(idInput);
+    let valor = input.value.trim();
+    let error = document.getElementById(idError);
+
+    if (valor === "") {
+        error.textContent = "Este campo es obligatorio";
+        return false;
+    }
+
+    if (!esNumero(valor)) {
+        error.textContent = "Solo se permiten números";
+        return false;
+    }
+
+    if (valor.length > 5) {
+        error.textContent = "Máximo 5 dígitos";
+        return false;
+    }
+
+    error.textContent = "";
+    return true;
+}
+
+// VALIDACIONES INDIVIDUALES
+function validarIngresos() {
+    return validarCampo("txtIngresos", "errorIngresos");
+}
+
+function validarEgresos() {
+    return validarCampo("txtEgresos", "errorEgresos");
+}
+
+function validarMonto() {
+    return validarCampo("txtMonto", "errorMonto");
+}
+
+function validarPlazo() {
+    return validarCampo("txtPlazo", "errorPlazo");
+}
+
+function validarTasaInteres() {
+    return validarCampo("txtTasaInteres", "errorTasaInteres");
 }

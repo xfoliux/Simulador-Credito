@@ -142,3 +142,11 @@ button:hover {
 #btnReiniciar:hover {
     background: #d9efe2;
 }
+.error {
+    color: #dc2626;
+    font-style: italic;
+    font-size: 0.8rem;
+    display: block;
+    margin-top: 4px;
+    margin-bottom: 8px;
+}
